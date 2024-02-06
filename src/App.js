@@ -1,5 +1,6 @@
-import { Layout } from "./App.styles";
+import { Canvas, Layout } from "./App.styles";
 import Cursor from "./components/cursor/cursor.component";
+import { WebGL } from "./components/webgl/index.jsx";
 import GlobalStyle from "./globalStyles";
 
 const App = () => {
@@ -8,6 +9,11 @@ const App = () => {
       <GlobalStyle />
       <Layout>
         <Cursor />
+        <main style={{ flexGrow: 1 }}>
+          <Canvas>
+            <WebGL />
+          </Canvas>
+        </main>
       </Layout>
     </>
   );
