@@ -1,20 +1,11 @@
-import { Canvas, Layout } from "./App.styles";
-import Cursor from "./components/cursor/cursor.component";
-import { WebGL } from "./components/webgl/index.jsx";
 import GlobalStyle from "./globalStyles";
+import Home from "./pages/home/home.component";
 
 const App = () => {
   return (
     <>
       <GlobalStyle />
-      <Layout>
-        <Cursor />
-        <main style={{ flexGrow: 1 }}>
-          <Canvas>
-            <WebGL />
-          </Canvas>
-        </main>
-      </Layout>
+      <Home />
     </>
   );
 };
