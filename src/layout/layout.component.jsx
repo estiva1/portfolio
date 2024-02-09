@@ -5,6 +5,7 @@ import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
 
 import { StyledLayout } from "./layout.styles";
 import Cursor from "../components/cursor/cursor.component";
+import Header from "../components/header/header.component";
 
 const Layout = ({ children }) => {
   //   const [lenis, setLenis] = useStore((state) => [state.lenis, state.setLenis]);
@@ -37,6 +38,7 @@ const Layout = ({ children }) => {
     <ReactLenis root>
       <StyledLayout>
         <Cursor />
+        <Header />
         <main style={{ flexGrow: 1 }}>{children}</main>
       </StyledLayout>
     </ReactLenis>
