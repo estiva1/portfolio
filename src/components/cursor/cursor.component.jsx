@@ -1,7 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useMotionValue, useSpring } from "framer-motion";
-import gsap from "gsap";
-
 import { Container, MotionCursor } from "./cursor.styles";
 
 const Cursor = () => {

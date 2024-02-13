@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Layout from "../../layout/layout.component";
 import { Canvas } from "./home.styles";
 import { WebGL } from "../../components/webgl";
+import { Leva } from "leva";
+import { useDebug } from "@studio-freight/hamo";
 
 const Home = () => {
+  const debug = useDebug();
+
+  useEffect(() => {
+    window.history.scrollRestoration = 'manual'
+  }, [])
+
   return (
     <Layout>
+      <Leva hidden={debug} />
       <Canvas>
         <WebGL />
       </Canvas>
