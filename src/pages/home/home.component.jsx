@@ -4,17 +4,19 @@ import { Canvas } from "./home.styles";
 import { WebGL } from "../../components/webgl";
 import { Leva } from "leva";
 import { useDebug } from "@studio-freight/hamo";
+import { RealViewport } from "../../components/real-viewport/real-viewport.component.jsx";
 
 const Home = () => {
   const debug = useDebug();
 
   useEffect(() => {
-    window.history.scrollRestoration = 'manual'
-  }, [])
+    window.history.scrollRestoration = "manual";
+  }, []);
 
   return (
     <Layout>
       <Leva hidden={debug} />
+      <RealViewport />
       <Canvas>
         <WebGL />
       </Canvas>
