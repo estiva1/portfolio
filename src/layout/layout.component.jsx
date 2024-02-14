@@ -38,7 +38,7 @@ const Layout = ({ children }) => {
     <ReactLenis root>
       <StyledLayout>
         <Cursor />
-        {/* <Header /> */}
+        <Header />
         <main style={{ flexGrow: 1 }}>{children}</main>
       </StyledLayout>
     </ReactLenis>

@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <StyledHeader>
       <ProgressBar />
-      <HeaderContainer></HeaderContainer>
+      {/* <HeaderContainer></HeaderContainer> */}
     </StyledHeader>
   );
 };

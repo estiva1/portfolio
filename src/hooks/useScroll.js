@@ -1,8 +1,9 @@
 import { useEffect } from "react";
-import { useStore } from "../lib/store";
+// import { useStore } from "../lib/store";
+import { useLenis } from "@studio-freight/react-lenis";
 
 export function useScroll(callback, deps = []) {
-  const lenis = useStore(({ lenis }) => lenis);
+  const lenis = useLenis(({ lenis }) => lenis);
 
   useEffect(() => {
     if (!lenis) return;

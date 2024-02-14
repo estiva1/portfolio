@@ -7,8 +7,7 @@ import { mapRange } from "../../lib/maths";
 import { useStore } from "../../lib/store";
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import React, { Color, DoubleSide, Euler, MathUtils, MeshPhysicalMaterial, Vector2, Vector3 } from "three";
-//import fragmentShader from "../webgl/particles/fragment.glsl";
-//import vertexShader from "../webgl/particles/vertex.glsl";
+
 import armOne from "../../models/arm.glb";
 import armTwo from "../../models/arm2.glb";
 
@@ -127,7 +126,7 @@ function Particles({ width = 250, height = 250, depth = 250, count = 1000, scale
         value: 0,
       },
       uColor: {
-        value: new Color('rgb(255, 152, 162)'),
+        value: new Color("rgb(255, 152, 162)"),
         // value: new Color("rgb(255, 207, 206)"),
         // value: new Color('rgb(255, 236, 234)'),
       },
@@ -249,7 +248,7 @@ const material = new MeshPhysicalMaterial({
 export function Arm() {
   const { scene: arm1 } = useGLTF(armOne);
   const { scene: arm2 } = useGLTF(armTwo);
-  const [type, setType] = useState(2);
+  const [type, setType] = useState(1);
 
   const [{ color, roughness, metalness, wireframe }, setMaterial] = useControls(
     () => ({
@@ -517,7 +516,7 @@ export function WebGL({ render = true }) {
         powerPreference: "high-performance",
         antialias: true,
         // stencil: false,
-        depth: false,
+        // depth: false,
         alpha: true,
       }}
       dpr={[1, 2]}
