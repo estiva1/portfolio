@@ -11,6 +11,8 @@ import { useStore } from "../../lib/store.js";
 import { clamp, mapRange } from "../../lib/maths.js";
 import { useLenis } from "@studio-freight/react-lenis";
 import GetInTouchButton from "../../common/get-in-touch-button/get-in-touch-button.component.jsx";
+import { AnimatePresence } from "framer-motion";
+import PreloadGreetings from "../../components/preload-greetings/preload-greetings.component.jsx";
 
 const Home = () => {
   const debug = useDebug();
@@ -169,17 +171,33 @@ const Home = () => {
       setIsVisible(true);
     }
   }, [intersection]);
+  
+  //--------------------------------------------
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    (() => {
+      setTimeout(() => {
+        setIsLoading(false);
+        document.body.style.cursor = "default";
+        window.scrollTo(0, 0);
+      }, 2500);
+    })();
+  }, []);
 
   return (
     <Layout>
       <Leva hidden={debug} />
       <RealViewport />
+      <AnimatePresence mode='wait'>
+        {isLoading && <PreloadGreetings />}
+      </AnimatePresence>
       <Canvas>
         <WebGL />
       </Canvas>
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "40vw" }}>
+      {/* <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "40vw" }}>
         <GetInTouchButton />
-      </div>
+      </div> */}
       <div style={{ maxWidth: "100px", color: "#fff" }}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae quisquam totam assumenda, repellat similique
         sequi officiis, praesentium magni possimus itaque eveniet sint, fuga ipsa cum at ut! Debitis libero reiciendis
