@@ -14,6 +14,7 @@ import GetInTouchButton from "../../common/get-in-touch-button/get-in-touch-butt
 import { AnimatePresence } from "framer-motion";
 import PreloadGreetings from "../../components/preload-greetings/preload-greetings.component.jsx";
 import Noise from "../../components/noise/noise.component.jsx";
+import Hero from "../../components/hero/hero.component.jsx";
 
 const Home = () => {
   const debug = useDebug();
@@ -191,12 +192,11 @@ const Home = () => {
       <Leva hidden={debug} />
       <RealViewport />
       {/* <Noise/> */}
-      <AnimatePresence mode='wait'>
-        {isLoading && <PreloadGreetings />}
-      </AnimatePresence>
+      <AnimatePresence mode="wait">{isLoading && <PreloadGreetings />}</AnimatePresence>
       <Canvas>
         <WebGL />
       </Canvas>
+      <Hero />
       {/* <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "40vw" }}>
         <GetInTouchButton />
       </div> */}
