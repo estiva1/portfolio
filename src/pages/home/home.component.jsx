@@ -13,6 +13,7 @@ import { useLenis } from "@studio-freight/react-lenis";
 import GetInTouchButton from "../../common/get-in-touch-button/get-in-touch-button.component.jsx";
 import { AnimatePresence } from "framer-motion";
 import PreloadGreetings from "../../components/preload-greetings/preload-greetings.component.jsx";
+import Noise from "../../components/noise/noise.component.jsx";
 
 const Home = () => {
   const debug = useDebug();
@@ -171,7 +172,7 @@ const Home = () => {
       setIsVisible(true);
     }
   }, [intersection]);
-  
+
   //--------------------------------------------
   const [isLoading, setIsLoading] = useState(true);
 
@@ -189,6 +190,7 @@ const Home = () => {
     <Layout>
       <Leva hidden={debug} />
       <RealViewport />
+      {/* <Noise/> */}
       <AnimatePresence mode='wait'>
         {isLoading && <PreloadGreetings />}
       </AnimatePresence>

@@ -31,7 +31,7 @@ const Noise = () => {
     const buffer32 = new Uint32Array(image.data.buffer);
 
     for (let i = 0; i < buffer32.length; i++) {
-      if (Math.random() < 0.5) buffer32[i] = 0xffffffff;
+      if (Math.random() < 0.3) buffer32[i] = 0xffffffff;
     }
 
     buffer.width = width;
