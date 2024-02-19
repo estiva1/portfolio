@@ -39,7 +39,11 @@ const GlobalStyle = createGlobalStyle`
 
   /* Set core body defaults */
   body {
-    font-family: 'Lora', serif;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
     text-rendering: optimizeSpeed;
     -webkit-font-smoothing: antialiased;
   }
