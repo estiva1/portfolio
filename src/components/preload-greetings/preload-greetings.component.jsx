@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { opacity, slideUp } from "../../functions/anim";
 import { Introduction } from "./preload-greetings.stles";
+import Noise from "../noise/noise.component";
 
 const words = ["Hello", "Bonjour", "Ciao", "Olà", "やあ", "Hallå", "Guten tag", "Привіт"];
 
@@ -42,19 +43,22 @@ const PreloadGreetings = () => {
   };
 
   return (
-    <Introduction variants={slideUp} initial="initial" exit="exit">
-      {dimension.width > 0 && (
-        <>
-          <motion.p variants={opacity} initial="initial" animate="enter">
-            {/* <span></span> */}
-            {words[index]}
-          </motion.p>
-          <svg>
-            <motion.path variants={curve} initial="initial" exit="exit"></motion.path>
-          </svg>
-        </>
-      )}
-    </Introduction>
+    <>
+      <Noise />
+      <Introduction variants={slideUp} initial="initial" exit="exit">
+        {dimension.width > 0 && (
+          <>
+            <motion.p variants={opacity} initial="initial" animate="enter">
+              {/* <span></span> */}
+              {words[index]}
+            </motion.p>
+            <svg>
+              <motion.path variants={curve} initial="initial" exit="exit"></motion.path>
+            </svg>
+          </>
+        )}
+      </Introduction>
+    </>
   );
 };
 
