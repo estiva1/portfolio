@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { opacity, slideUp } from "../../functions/anim";
-import { Introduction } from "./preload-greetings.stles";
+import React, { useEffect, useState } from "react";
+
 import Noise from "../noise/noise.component";
+import { Introduction } from "./preload-greetings.styles";
+import { opacity, slideUp } from "./preload-greetings.anim";
 
 const words = ["Hello", "Bonjour", "Ciao", "Olà", "やあ", "Hallå", "Guten tag", "Привіт"];
 

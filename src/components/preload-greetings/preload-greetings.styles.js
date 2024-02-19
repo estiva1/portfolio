@@ -11,6 +11,7 @@ export const Introduction = styled(motion.div)`
   background-color: #141516;
   box-shadow: 0px 30px 25px rgba(0, 0, 0, 0.748);
   z-index: 99;
+
   svg {
     position: absolute;
     top: 0;
@@ -20,6 +21,7 @@ export const Introduction = styled(motion.div)`
       fill: #141516;
     }
   }
+
   p {
     display: flex;
     color: #fff;
@@ -27,6 +29,7 @@ export const Introduction = styled(motion.div)`
     align-items: center;
     position: absolute;
     z-index: 1;
+    
     /* span {
       display: block;
       width: 10px;
