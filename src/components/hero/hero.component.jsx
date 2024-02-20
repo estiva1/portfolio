@@ -43,7 +43,7 @@ const Hero = () => {
   return (
     <HeroContainer variants={slideUp} initial="initial" animate="enter">
       <SliderContainer>
-        <Slider>
+        <Slider ref={slider}>
           <SliderText ref={firstText}>Stanislav Yuzva -</SliderText>
           <SliderText ref={secondText}>Stanislav Yuzva -</SliderText>
         </Slider>
