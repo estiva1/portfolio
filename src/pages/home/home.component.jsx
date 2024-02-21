@@ -172,27 +172,12 @@ const Home = () => {
     if (intersection?.isIntersecting) {
       setIsVisible(true);
     }
-  }, [intersection]);
-
-  //--------------------------------------------
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    (() => {
-      setTimeout(() => {
-        setIsLoading(false);
-        document.body.style.cursor = "default";
-        window.scrollTo(0, 0);
-      }, 2500);
-    })();
-  }, []);
+  }, [intersection]);  
 
   return (
     <Layout>
       <Leva hidden={debug} />
-      <RealViewport />
-      {/* <Noise/> */}
-      <AnimatePresence mode="wait">{isLoading && <PreloadGreetings />}</AnimatePresence>
+      <RealViewport />      
       <Canvas>
         <WebGL />
       </Canvas>

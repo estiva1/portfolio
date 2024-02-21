@@ -18,17 +18,25 @@ export const Slider = styled.div`
   white-space: nowrap;
 `;
 
-export const SliderText = styled.p`
+export const SliderText = styled.h1`
   position: relative;
+  display: flex;
+  align-items: center;
+  color: #fff;
   margin: 0px;
-  color: white;
-  font-size: 175px;
-  font-weight: 500;
-  padding-right: 50px;
+  font-size: 10rem;
+  font-weight: 400;
+  white-space: nowrap;
+  pointer-events: none;
 
   &:nth-of-type(2) {
     position: absolute;
     left: 100%;
     top: 0;
   }
+`;
+
+export const Spacer = styled.span`
+  padding-inline: 3rem;
+  //font-size: 7.5rem;
 `;

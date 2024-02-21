@@ -7,7 +7,7 @@ export const Canvas = styled.div`
   left: 0;
   top: 0;
   opacity: 0.05;
-  z-index: 100000;
+  z-index: 11111;
   pointer-events: none;
   // mix-blend-mode: color-dodge;
 `;

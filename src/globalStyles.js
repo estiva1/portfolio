@@ -47,6 +47,10 @@ const GlobalStyle = createGlobalStyle`
     text-rendering: optimizeSpeed;
     -webkit-font-smoothing: antialiased;
   }
+  
+  body::-webkit-scrollbar {
+    display: none;
+  }
 
   /* Set shorter line heights on headings and interactive elements */
   h1,
