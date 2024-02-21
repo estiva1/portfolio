@@ -8,11 +8,12 @@ import { opacity, slideUp } from "./preload-greetings.anim";
 const words = ["Hello", "Bonjour", "Ciao", "Olà", "やあ", "Hallå", "Guten tag", "Привіт"];
 
 const PreloadGreetings = () => {
+  const widthCompensator = 6.4; // 1920px/300px
   const [index, setIndex] = useState(0);
-  const [dimension, setDimension] = useState({ width: 0, height: 0 });
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
-    setDimension({ width: window.innerWidth, height: window.innerHeight });
+    setDimensions({ width: window.innerWidth, height: window.innerHeight });
   }, []);
 
   useEffect(() => {
@@ -25,12 +26,12 @@ const PreloadGreetings = () => {
     );
   }, [index]);
 
-  const initialPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${dimension.height} Q${dimension.width / 2} ${
-    dimension.height + 300
-  } 0 ${dimension.height}  L0 0`;
-  const targetPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${dimension.height} Q${dimension.width / 2} ${
-    dimension.height
-  } 0 ${dimension.height}  L0 0`;
+  const initialPath = `M0 0 L${dimensions.width} 0 L${dimensions.width} ${dimensions.height} Q${dimensions.width / 2} ${
+    dimensions.height + dimensions.width / widthCompensator
+  } 0 ${dimensions.height}  L0 0`;
+  const targetPath = `M0 0 L${dimensions.width} 0 L${dimensions.width} ${dimensions.height} Q${dimensions.width / 2} ${
+    dimensions.height
+  } 0 ${dimensions.height}  L0 0`;
 
   const curve = {
     initial: {
@@ -47,7 +48,7 @@ const PreloadGreetings = () => {
     <>
       <Noise />
       <Introduction variants={slideUp} initial="initial" exit="exit">
-        {dimension.width > 0 && (
+        {dimensions.width > 0 && (
           <>
             <motion.p variants={opacity} initial="initial" animate="enter">
               {/* <span></span> */}
