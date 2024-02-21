@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledLayout = styled.div`
-  background-color: #fff;
+  background-color: #000;
   //color: #000;
   min-height: 100vh;
   display: flex;

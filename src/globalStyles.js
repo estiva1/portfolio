@@ -1,6 +1,14 @@
 import { createGlobalStyle } from "styled-components";
 
+import NeueMontrealRegular from "./fonts/NeueMontreal-Regular.woff";
+import NeueMontrealRegular2 from "./fonts/NeueMontreal-Regular.woff2";
+
 const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: "Roboto Condensed";
+    src: url(${NeueMontrealRegular}) format("woff"), url(${NeueMontrealRegular2}) format("woff2");
+  }
+
   /* Box sizing rules */
   *,
   *::before,
@@ -39,15 +47,14 @@ const GlobalStyle = createGlobalStyle`
 
   /* Set core body defaults */
   body {
-    font-family: "Inter", sans-serif;
+    font-family: 'PP Neue Montreal', sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    font-variation-settings:
-      "slnt" 0;
+    // font-variation-settings: "slnt" 0;
     text-rendering: optimizeSpeed;
     -webkit-font-smoothing: antialiased;
   }
-  
+
   body::-webkit-scrollbar {
     display: none;
   }

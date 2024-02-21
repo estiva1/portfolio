@@ -24,6 +24,7 @@ export const SliderText = styled.h1`
   align-items: center;
   color: #fff;
   margin: 0px;
+  // font-size: max(10rem, 14vw);
   font-size: 10rem;
   font-weight: 400;
   white-space: nowrap;
