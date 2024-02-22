@@ -5,6 +5,7 @@ import { useRef, useLayoutEffect } from "react";
 
 import { slideUp } from "./hero.anim";
 import { HeroContainer, Slider, SliderContainer, SliderText, Spacer } from "./hero.styles";
+import Globe from "../globe/globe.component";
 
 const Hero = () => {
   const firstText = useRef(null);
@@ -42,10 +43,15 @@ const Hero = () => {
 
   return (
     <HeroContainer variants={slideUp} initial="initial" animate="enter">
+      {/* <Globe /> */}
       <SliderContainer>
         <Slider ref={slider}>
-          <SliderText ref={firstText}>Stanislav Yuzva<Spacer>—</Spacer></SliderText>
-          <SliderText ref={secondText}>Stanislav Yuzva<Spacer>—</Spacer></SliderText>
+          <SliderText ref={firstText}>
+            Stanislav Yuzva<Spacer>—</Spacer>
+          </SliderText>
+          <SliderText ref={secondText}>
+            Stanislav Yuzva<Spacer>—</Spacer>
+          </SliderText>
         </Slider>
       </SliderContainer>
     </HeroContainer>

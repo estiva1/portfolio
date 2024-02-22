@@ -15,7 +15,6 @@ export const SliderContainer = styled.div`
 
 export const Slider = styled.div`
   position: relative;
-  white-space: nowrap;
 `;
 
 export const SliderText = styled.h1`
