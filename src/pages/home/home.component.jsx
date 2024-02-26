@@ -182,7 +182,7 @@ const Home = () => {
       <Canvas>
         <WebGL />
       </Canvas>
-      {/* <Hero /> */}
+      <Hero />
       {/* <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "40vw" }}>
         <GetInTouchButton />
       </div> */}

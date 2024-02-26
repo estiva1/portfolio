@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/all";
 import { useRef, useLayoutEffect } from "react";
 
 import { slideUp } from "./hero.anim";
-import { HeroContainer, Slider, SliderContainer, SliderText, Spacer } from "./hero.styles";
+import { HeroContainer, HeroGlassBox, Slider, SliderContainer, SliderText, Spacer } from "./hero.styles";
 import Globe from "../globe/globe.component";
 
 const Hero = () => {
@@ -43,8 +43,8 @@ const Hero = () => {
 
   return (
     <HeroContainer variants={slideUp} initial="initial" animate="enter">
-      {/* <Globe /> */}
-      <SliderContainer>
+      <Globe />
+      {/* <SliderContainer>
         <Slider ref={slider}>
           <SliderText ref={firstText}>
             Stanislav Yuzva<Spacer>—</Spacer>
@@ -53,7 +53,8 @@ const Hero = () => {
             Stanislav Yuzva<Spacer>—</Spacer>
           </SliderText>
         </Slider>
-      </SliderContainer>
+      </SliderContainer> */}
+      <HeroGlassBox />
     </HeroContainer>
   );
 };

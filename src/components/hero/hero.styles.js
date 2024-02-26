@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 export const HeroContainer = styled(motion.section)`
   position: relative;
   display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
   overflow: hidden;
 `;
@@ -39,4 +41,18 @@ export const SliderText = styled.h1`
 export const Spacer = styled.span`
   padding-inline: 3rem;
   //font-size: 7.5rem;
+`;
+
+export const HeroGlassBox = styled.div`
+  padding: 100px;
+  width: 900px;
+  height: 400px;
+  border-radius: 15px;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  //background-image: linear-gradient(to bottom right, #fe7630, #ffc711);
+  -webkit-box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
 `;
