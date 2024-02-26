@@ -172,16 +172,17 @@ const Home = () => {
     if (intersection?.isIntersecting) {
       setIsVisible(true);
     }
-  }, [intersection]);  
+  }, [intersection]);
 
   return (
     <Layout>
-      <Leva hidden={debug} />
-      <RealViewport />      
+      <Leva hidden={!debug} />
+      <RealViewport />
+      <Noise />
       <Canvas>
         <WebGL />
       </Canvas>
-      <Hero />
+      {/* <Hero /> */}
       {/* <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "40vw" }}>
         <GetInTouchButton />
       </div> */}

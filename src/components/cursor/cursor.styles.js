@@ -20,7 +20,8 @@ export const MotionCursor = styled(motion.div)`
   position: absolute;
   transform: translate(-50%, -50%);
   border-radius: 100%;
-  border: 1px solid #ff98a2; // pink
+  border: 1px solid #ffcc7a; // light orange
+  backdrop-filter: blur(5px);
   width: 40px;
   height: 40px;
   opacity: 0.75;

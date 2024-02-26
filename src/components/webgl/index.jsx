@@ -126,7 +126,8 @@ function Particles({ width = 250, height = 250, depth = 250, count = 1000, scale
         value: 0,
       },
       uColor: {
-        value: new Color("rgb(255, 152, 162)"),
+        value: new Color("rgb(255,204,122)"),
+        // value: new Color("rgb(255, 152, 162)"),
         // value: new Color("rgb(255, 207, 206)"),
         // value: new Color('rgb(255, 236, 234)'),
       },

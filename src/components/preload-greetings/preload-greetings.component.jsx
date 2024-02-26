@@ -45,22 +45,19 @@ const PreloadGreetings = () => {
   };
 
   return (
-    <>
-      <Noise />
-      <Introduction variants={slideUp} initial="initial" exit="exit">
-        {dimensions.width > 0 && (
-          <>
-            <motion.p variants={opacity} initial="initial" animate="enter">
-              {/* <span></span> */}
-              {words[index]}
-            </motion.p>
-            <svg>
-              <motion.path variants={curve} initial="initial" exit="exit"></motion.path>
-            </svg>
-          </>
-        )}
-      </Introduction>
-    </>
+    <Introduction variants={slideUp} initial="initial" exit="exit">
+      {dimensions.width > 0 && (
+        <>
+          <motion.p variants={opacity} initial="initial" animate="enter">
+            {/* <span></span> */}
+            {words[index]}
+          </motion.p>
+          <svg>
+            <motion.path variants={curve} initial="initial" exit="exit"></motion.path>
+          </svg>
+        </>
+      )}
+    </Introduction>
   );
 };
 
