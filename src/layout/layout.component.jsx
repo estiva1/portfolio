@@ -8,7 +8,7 @@ import Header from "../components/header/header.component";
 import { AnimatePresence } from "framer-motion";
 import PreloadGreetings from "../components/preload-greetings/preload-greetings.component";
 import Noise from "../components/noise/noise.component";
-import { Gradient } from "whatamesh";
+import { Gradient } from "../shaders/mesh-gradient/mesh-gradient.component";
 
 const Layout = ({ children }) => {
   const lenis = useLenis(({ scroll }) => {});

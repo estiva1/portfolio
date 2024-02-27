@@ -15,8 +15,8 @@ export const GradientCanvas = styled.canvas`
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  --gradient-color-1: #100E79; //blue
-  --gradient-color-2: #7B1A5E; //violet
-  --gradient-color-3: #E60000; //electric red
-  --gradient-color-4: #FF9F00; //orange peel
+  --gradient-color-1: #21979A; //blue
+  --gradient-color-2: #8A119C; //violet
+  --gradient-color-3: #90e0ff; //electric red
+  --gradient-color-4: #ffcb57; //orange peel
 `;
