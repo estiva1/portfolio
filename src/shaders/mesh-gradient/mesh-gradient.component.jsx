@@ -439,7 +439,7 @@ class Gradient {
     e(this, "t", 1253106);
     e(this, "last", 0);
     e(this, "width", void 0);
-    e(this, "minWidth", 1111);
+    e(this, "minWidth", 800);
     e(this, "height", 600);
     e(this, "xSegCount", void 0);
     e(this, "ySegCount", void 0);
@@ -448,10 +448,10 @@ class Gradient {
     e(this, "geometry", void 0);
     e(this, "minigl", void 0);
     e(this, "scrollObserver", void 0);
-    e(this, "amp", 320);
-    e(this, "seed", 5);
-    e(this, "freqX", 14e-5);
-    e(this, "freqY", 29e-5);
+    e(this, "amp", 600);
+    e(this, "seed", 14);
+    e(this, "freqX", 15e-5);
+    e(this, "freqY", 50e-5);
     e(this, "freqDelta", 1e-5);
     e(this, "activeColors", [1, 1, 1, 1]);
     e(this, "isMetaKey", !1);
@@ -612,7 +612,7 @@ class Gradient {
             value: this.amp,
           }),
           noiseSpeed: new this.minigl.Uniform({
-            value: 10,
+            value: 7,
           }),
           noiseFlow: new this.minigl.Uniform({
             value: 3,

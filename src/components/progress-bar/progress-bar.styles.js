@@ -7,7 +7,7 @@ export const MotionProgressBar = styled(motion.div)`
   left: 0;
   right: 0;
   height: 4px;
-  background: #ffcc7a;
+  background: #7b3af9;
   transform-origin: 0%;
   z-index: 999;
 `;
