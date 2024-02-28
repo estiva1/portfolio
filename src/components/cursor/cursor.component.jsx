@@ -109,14 +109,7 @@ const Cursor = () => {
 
   return (
     <Container style={{ opacity: hasMoved ? 1 : 0, transition: "opacity 0.6s ease" }}>
-      <div ref={cursor}>
-        {/* <MotionCursor
-          style={{
-            left: smoothMouse.x,
-            top: smoothMouse.y,
-          }}
-          $pointer={isPointer}
-        /> */}
+      
         <motion.div
           style={{
             left: smoothCursor.x,
@@ -167,7 +160,6 @@ const Cursor = () => {
             </motion.svg>
           </motion.div>
         </motion.div>
-      </div>
     </Container>
   );
 };
