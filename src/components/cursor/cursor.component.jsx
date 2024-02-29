@@ -1,36 +1,37 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { motion, useMotionTemplate, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { Container, MotionCursor } from "./cursor.styles";
+
+import { Container, MotionCursor, MotionLightning } from "./cursor.styles";
 
 const Cursor = () => {
   const cursor = useRef();
   const [hasMoved, setHasMoved] = useState(false);
   const [isPointer, setIsPointer] = useState(false);
 
-  const colorA = "#0CF";
-  const colorB = "#86F";
+  const palleteA = {
+    aA: "#0cf",
+    aB: "#86f",
+  };
+  const palleteB = {
+    bA: "#f49",
+    bB: "#94f",
+  };
   const inputRange = [0, 1];
-  const size = 80;
   const borderRadius = "24px";
-  const scale = 1;
 
   const mouse = {
     x: useMotionValue(0),
     y: useMotionValue(0),
   };
-  const cursoR = {
+  const styledCursor = {
     x: useMotionValue(0),
     y: useMotionValue(0),
   };
 
-  const smoothOptions = { damping: 20, stiffness: 300, mass: 0.5 };
-  const smoothMouse = {
-    x: useSpring(mouse.x, smoothOptions),
-    y: useSpring(mouse.y, smoothOptions),
-  };
+  const smoothOptions = { damping: 20, stiffness: 400 };
   const smoothCursor = {
-    x: useSpring(cursoR.x, smoothOptions),
-    y: useSpring(cursoR.y, smoothOptions),
+    x: useSpring(styledCursor.x, smoothOptions),
+    y: useSpring(styledCursor.y, smoothOptions),
   };
 
   const onMouseMove = useCallback(({ clientX, clientY }) => {
@@ -40,8 +41,8 @@ const Cursor = () => {
 
   const onCursorMove = useCallback(
     ({ clientX, clientY }) => {
-      cursoR.x.set(clientX);
-      cursoR.y.set(clientY);
+      styledCursor.x.set(clientX);
+      styledCursor.y.set(clientY);
       setHasMoved(true);
     },
     [hasMoved]
@@ -75,7 +76,7 @@ const Cursor = () => {
       setIsPointer(false);
     };
 
-    elements = [...document.querySelectorAll("button, a, input, label, [data-cursor='pointer']")];
+    elements = [...document.querySelectorAll("button, a, h3, input, label, [data-cursor='pointer']")];
 
     elements.forEach((el) => {
       el.addEventListener("mouseenter", onMouseEnter, false);
@@ -108,58 +109,48 @@ const Cursor = () => {
   const filter = useMotionTemplate`drop-shadow(${shadowXSpring}px ${shadowYSpring}px 10px rgba(0, 0, 68, 0.3))`;
 
   return (
-    <Container style={{ opacity: hasMoved ? 1 : 0, transition: "opacity 0.6s ease" }}>
-      
-        <motion.div
-          style={{
-            left: smoothCursor.x,
-            top: smoothCursor.y,
-            width: size,
-            height: size,
-            rotateX: rotateXSpring,
-            rotateY: rotateYSpring,
-            display: "flex",
-            placeItems: "center",
-            placeContent: "center",
-            overflow: "visible",
-            margin: "auto",
-            transformPerspective: 1200,
-            position: "absolute",
-            transform: "translate(-50%, -50%)",
-          }}
-          initial={{
-            borderRadius,
-            background: `linear-gradient(180deg, ${colorA} 0%, ${colorB} 100%)`,
-          }}
-          animate={{
-            borderRadius,
-            background: `linear-gradient(180deg, ${colorA} 0%, ${colorB} 100%)`,
-          }}
-        >
-          <motion.div
-            style={{ width: 64, height: 64 }}
-            initial={{ scale }}
-            animate={{ scale }}
+    <Container ref={cursor} style={{ opacity: hasMoved ? 1 : 0, transition: "opacity 0.6s ease" }}>
+      <MotionCursor
+        style={{
+          top: smoothCursor.y,
+          left: smoothCursor.x,
+          rotateX: rotateXSpring,
+          rotateY: rotateYSpring,
+          transformPerspective: 1200,
+        }}
+        initial={{
+          borderRadius,
+          background: !isPointer
+            ? `linear-gradient(180deg, ${palleteA.aA} 0%, ${palleteA.aB} 100%)`
+            : `linear-gradient(180deg, ${palleteB.bA} 0%, ${palleteB.bB} 100%)`,
+        }}
+        animate={{
+          borderRadius,
+          background: !isPointer
+            ? `linear-gradient(180deg, ${palleteA.aA} 0%, ${palleteA.aB} 100%)`
+            : `linear-gradient(180deg, ${palleteB.bA} 0%, ${palleteB.bB} 100%)`,
+        }}
+        $pointer={isPointer}
+      >
+        <MotionLightning initial={1} animate={1} transition={{ type: "spring", ...smoothOptions }} $pointer={isPointer}>
+          <motion.svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="64"
+            height="64"
+            style={{
+              x: xSpring,
+              y: ySpring,
+              filter,
+            }}
             transition={{ type: "spring", ...smoothOptions }}
           >
-            <motion.svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="64"
-              height="64"
-              style={{
-                x: xSpring,
-                y: ySpring,
-                filter,
-              }}
-              transition={{ type: "spring", ...smoothOptions }}
-            >
-              <path
-                d="M 28.285 6.692 C 29.329 4.952 32 5.692 32 7.721 L 32 20.417 C 32 21.383 32.784 22.167 33.75 22.167 L 53.468 22.167 C 55.022 22.167 55.983 23.863 55.183 25.196 L 35.715 57.642 C 34.671 59.381 32 58.641 32 56.613 L 32 43.917 C 32 42.95 31.216 42.167 30.25 42.167 L 10.533 42.167 C 8.978 42.167 8.018 40.471 8.818 39.138 Z"
-                fill="rgb(255,255,255)"
-              ></path>
-            </motion.svg>
-          </motion.div>
-        </motion.div>
+            <path
+              d="M 28.285 6.692 C 29.329 4.952 32 5.692 32 7.721 L 32 20.417 C 32 21.383 32.784 22.167 33.75 22.167 L 53.468 22.167 C 55.022 22.167 55.983 23.863 55.183 25.196 L 35.715 57.642 C 34.671 59.381 32 58.641 32 56.613 L 32 43.917 C 32 42.95 31.216 42.167 30.25 42.167 L 10.533 42.167 C 8.978 42.167 8.018 40.471 8.818 39.138 Z"
+              fill="rgb(255,255,255)"
+            ></path>
+          </motion.svg>
+        </MotionLightning>
+      </MotionCursor>
     </Container>
   );
 };
