@@ -176,7 +176,7 @@ const Home = () => {
 
   return (
     <Layout>
-      <Leva hidden={!debug} />
+      <Leva hidden={debug} />
       <RealViewport />
       <Noise />
       <Canvas>

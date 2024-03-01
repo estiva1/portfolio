@@ -9,7 +9,7 @@ export const Container = styled.div`
   top: 20px;
   left: 20px;
   pointer-events: none;
-  overflow: hidden;
+  overflow: visible;
 
   @media (hover: none) {
     display: none;

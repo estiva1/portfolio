@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 
-import Noise from "../noise/noise.component";
 import { Introduction } from "./preload-greetings.styles";
 import { opacity, slideUp } from "./preload-greetings.anim";
 

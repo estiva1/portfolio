@@ -28,18 +28,18 @@ const Layout = ({ children }) => {
     })();
   }, []);
 
-  const gradient = new Gradient();
-  useEffect(() => {
-    gradient.initGradient(GradientCanvas);
-  }, []);
+  // const gradient = new Gradient();
+  // useEffect(() => {
+  //   gradient.initGradient(GradientCanvas);
+  // }, []);
 
   return (
     <ReactLenis root>
       <StyledLayout>
-        <AnimatePresence mode="wait">{isLoading && <PreloadGreetings />}</AnimatePresence>
+        {/* <AnimatePresence mode="wait">{isLoading && <PreloadGreetings />}</AnimatePresence> */}
         <Cursor />
         <Header />
-        <GradientCanvas />
+        {/* <GradientCanvas /> */}
 
         <main>{children}</main>
       </StyledLayout>
