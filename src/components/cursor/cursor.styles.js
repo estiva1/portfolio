@@ -6,8 +6,9 @@ export const Container = styled.div`
   height: 100vh;
   width: 100%;
   z-index: 9999;
-  top: 20px;
-  left: 20px;
+  top: ${({ $pointer }) => ($pointer ? "8px" : "20px")};
+  left: ${({ $pointer }) => ($pointer ? "8px" : "20px")};
+  transition: top 800ms cubic-bezier(0.19, 1, 0.22, 1), left 800ms cubic-bezier(0.19, 1, 0.22, 1);
   pointer-events: none;
   overflow: visible;
 
@@ -33,7 +34,7 @@ export const MotionCursor = styled(motion.div)`
   place-content: center;
   overflow: visible;
   margin: auto;
-  transform: ${({ $pointer }) => ($pointer ? "scale(0.6) !important" : "")};
+  transform: ${({ $pointer }) => ($pointer ? "scale(0.3) !important" : "")};
   transition: transform 600ms cubic-bezier(0.19, 1, 0.22, 1);
 `;
 

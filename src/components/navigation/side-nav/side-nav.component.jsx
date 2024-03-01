@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import { SideSVGCurve } from "./side-nav.styles";
+import { menuSlide } from "./side-nav.anim";
+import { SideNavContainer, SideSVGCurve } from "./side-nav.styles";
 
 const Curve = () => {
   const initialPath = `M100 0 L100 ${window.innerHeight} Q-100 ${window.innerHeight / 2} 100 0`;
@@ -28,3 +29,34 @@ const Curve = () => {
   );
 };
 
+const SideNav = () => {
+  return (
+    <SideNavContainer variants={menuSlide} initial="initial" animate="enter" exit="exit">
+      {/* <div className={styles.body}>
+        <div
+          onMouseLeave={() => {
+            setSelectedIndicator(pathname);
+          }}
+          className={styles.nav}
+        >
+          <div className={styles.header}>
+            <p>Navigation</p>
+          </div>
+          {navItems.map((data, index) => {
+            return (
+              <Link
+                key={index}
+                data={{ ...data, index }}
+                isActive={selectedIndicator == data.href}
+                setSelectedIndicator={setSelectedIndicator}
+              ></Link>
+            );
+          })}
+        </div>
+      </div> */}
+      <Curve />
+    </SideNavContainer>
+  );
+};
+
+export default SideNav;

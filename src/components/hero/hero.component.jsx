@@ -6,6 +6,7 @@ import { useRef, useLayoutEffect } from "react";
 import { slideUp } from "./hero.anim";
 import { HeroContainer, HeroGlassBox, Slider, SliderContainer, SliderText, Spacer } from "./hero.styles";
 import Globe from "../globe/globe.component";
+import Navigation from "../navigation/navigation.component";
 
 const Hero = () => {
   const firstText = useRef(null);
@@ -54,7 +55,8 @@ const Hero = () => {
           </SliderText>
         </Slider>
       </SliderContainer> */}
-      <HeroGlassBox />
+      <Navigation />
+      {/* <HeroGlassBox /> */}
       {/* <h3 style={{ maxWidth: "100px", color: "#fff" }}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae quisquam totam assumenda, repellat similique
         sequi officiis, praesentium magni possimus itaque eveniet sint, fuga ipsa cum at ut! Debitis libero reiciendis

@@ -109,7 +109,7 @@ const Cursor = () => {
   const filter = useMotionTemplate`drop-shadow(${shadowXSpring}px ${shadowYSpring}px 10px rgba(0, 0, 68, 0.3))`;
 
   return (
-    <Container ref={cursor} style={{ opacity: hasMoved ? 1 : 0, transition: "opacity 0.6s ease" }}>
+    <Container ref={cursor} style={{ opacity: hasMoved ? 1 : 0, transition: "opacity 0.6s ease" }} $pointer={isPointer}>
       <MotionCursor
         style={{
           top: smoothCursor.y,
