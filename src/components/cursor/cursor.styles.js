@@ -41,6 +41,11 @@ export const MotionCursor = styled(motion.div)`
 export const MotionLightning = styled(motion.div)`
   width: 64px;
   height: 64px;
-  transform: ${({ $pointer }) => ($pointer ? "rotate(360deg)" : "")};
-  transition: transform 800ms cubic-bezier(0.19, 1, 0.22, 1);
+
+  .lightning {
+    transform-origin: 50% 50%;
+    transform-box: fill-box;
+    transform: ${({ $pointer }) => ($pointer ? "rotate(360deg)" : "")};
+    transition: transform 800ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
 `;

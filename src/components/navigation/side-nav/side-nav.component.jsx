@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 
 import { menuSlide } from "./side-nav.anim";
 import { SideNavContainer, SideSVGCurve } from "./side-nav.styles";
+import SlideNavItem from "./side-nav-item/side-nav-item.component";
 
 const Curve = () => {
   const initialPath = `M100 0 L100 ${window.innerHeight} Q-100 ${window.innerHeight / 2} 100 0`;
@@ -56,11 +57,7 @@ const SideNav = () => {
           <p>Navigation</p>
         </div> */}
         {navItems.map((item, index) => {
-          return (
-            <p style={{ color: "white", fontSize: "5rem" }} key={index}>
-              {item.title}
-            </p>
-          );
+          return <SlideNavItem key={index} data={{ ...item, index }} />;
         })}
       </div>
       <Curve />
