@@ -124,35 +124,35 @@ const Home = () => {
     });
   }, [whyRect]);
 
-  useEffect(() => {
-    const top = cardsRect.top - windowHeight / 2;
-    addThreshold({ id: "cards-start", value: top });
-    addThreshold({ id: "cards-end", value: top + cardsRect.height });
-    addThreshold({
-      id: "red-end",
-      value: top + cardsRect.height + windowHeight,
-    });
-  }, [cardsRect]);
+  // useEffect(() => {
+  //   const top = cardsRect.top - windowHeight / 2;
+  //   addThreshold({ id: "cards-start", value: top });
+  //   addThreshold({ id: "cards-end", value: top + cardsRect.height });
+  //   addThreshold({
+  //     id: "red-end",
+  //     value: top + cardsRect.height + windowHeight,
+  //   });
+  // }, [cardsRect]);
 
-  useEffect(() => {
-    const top = whiteRect.top - windowHeight;
-    addThreshold({ id: "light-start", value: top });
-  }, [whiteRect]);
+  // useEffect(() => {
+  //   const top = whiteRect.top - windowHeight;
+  //   addThreshold({ id: "light-start", value: top });
+  // }, [whiteRect]);
 
-  useEffect(() => {
-    const top = featuresRect.top;
-    addThreshold({ id: "features", value: top });
-  }, [featuresRect]);
+  // useEffect(() => {
+  //   const top = featuresRect.top;
+  //   addThreshold({ id: "features", value: top });
+  // }, [featuresRect]);
 
-  useEffect(() => {
-    const top = inuseRect.top;
-    addThreshold({ id: "in-use", value: top });
-  }, [inuseRect]);
+  // useEffect(() => {
+  //   const top = inuseRect.top;
+  //   addThreshold({ id: "in-use", value: top });
+  // }, [inuseRect]);
 
-  useEffect(() => {
-    const top = lenis?.limit;
-    addThreshold({ id: "end", value: top });
-  }, [lenis?.limit]);
+  // useEffect(() => {
+  //   const top = lenis?.limit;
+  //   addThreshold({ id: "end", value: top });
+  // }, [lenis?.limit]);
 
   useScroll((e) => {
     console.log(window.scrollY, e.scroll, e.isScrolling, e.velocity, e.isLocked);
@@ -183,6 +183,19 @@ const Home = () => {
         <WebGL />
       </Canvas>
       <Hero />
+      <div style={{ maxWidth: "50px", color: "transparent" }}>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam consequatur quam nam dolores nulla rem natus
+        fugit qui consequuntur possimus. Ipsam et dolorum praesentium voluptatem odio corrupti eius in cupiditate nihil
+        perspiciatis modi qui libero minus, mollitia itaque dolore inventore aliquam. Dolore non perspiciatis iusto
+        illum. Praesentium iusto amet veniam soluta numquam nihil quia doloribus, maiores earum tempora vero sint quis
+        voluptate incidunt. Impedit, voluptatum quibusdam voluptates molestiae ex facere ipsa laudantium ullam nam porro
+        non debitis quam accusamus harum voluptate consequuntur officiis quaerat fugit nobis. Quidem, porro illo eius
+        molestiae sapiente inventore? Quibusdam, suscipit.
+      </div>
+      <div style={{ maxWidth: "50px" }} ref={whyRectRef}>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio ipsa incidunt doloremque perferendis quibusdam?
+        Dolorum incidunt non architecto tenetur repellat.
+      </div>
       {/* <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "40vw" }}>
         <GetInTouchButton />
       </div> */}

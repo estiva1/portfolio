@@ -249,7 +249,7 @@ const material = new MeshPhysicalMaterial({
 export function Arm() {
   const { scene: arm1 } = useGLTF(armOne);
   const { scene: arm2 } = useGLTF(armTwo);
-  const [type, setType] = useState(1);
+  const [type, setType] = useState(2);
 
   const [{ color, roughness, metalness, wireframe }, setMaterial] = useControls(
     () => ({
@@ -370,6 +370,7 @@ export function Arm() {
   const [step, setStep] = useState(0);
 
   useEffect(() => {
+    console.log("step:", step);
     if (step === 0) {
       setLights({
         light1Intensity: 0.35,
@@ -414,6 +415,7 @@ export function Arm() {
     }
 
     const current = thresholds.findIndex((v) => scroll < v) - 1;
+    console.log("current:", current);
 
     const start = thresholds[current];
     const end = thresholds[current + 1];
@@ -503,7 +505,7 @@ function Content() {
   return (
     <>
       {/* <OrbitControls makeDefault /> */}
-      <Particles width={viewport.width} height={viewport.height} depth={500} count={100} scale={500} size={150} />
+      <Particles width={viewport.width} height={viewport.height} depth={500} count={120} scale={500} size={150} />
 
       <Arm />
     </>
