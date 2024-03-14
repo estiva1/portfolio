@@ -249,7 +249,7 @@ const material = new MeshPhysicalMaterial({
 export function Arm() {
   const { scene: arm1 } = useGLTF(armOne);
   const { scene: arm2 } = useGLTF(armTwo);
-  const [type, setType] = useState(2);
+  const [type, setType] = useState(1);
 
   const [{ color, roughness, metalness, wireframe }, setMaterial] = useControls(
     () => ({
@@ -342,6 +342,7 @@ export function Arm() {
     material.wireframe = wireframe;
   }, [color, roughness, metalness, wireframe, material]);
 
+  // material shiness
   useEffect(() => {
     if (arm1) {
       arm1.traverse((node) => {
@@ -370,7 +371,7 @@ export function Arm() {
   const [step, setStep] = useState(0);
 
   useEffect(() => {
-    console.log("step:", step);
+    // console.log("step", step);
     if (step === 0) {
       setLights({
         light1Intensity: 0.35,
@@ -381,19 +382,19 @@ export function Arm() {
       setMaterial({
         color: "#b0b0b0",
         roughness: 0.4,
-        metalness: 1,
+        metalness: 0.9,
       });
     } else {
       setLights({
-        light1Intensity: 1,
-        light2Intensity: 1,
+        light1Intensity: 0.7,
+        light2Intensity: 0.5,
         lightsColor: "#efefef",
-        ambientColor: "#b0B0B0",
+        ambientColor: "#bcbcbc",
       });
       setMaterial({
-        color: "#efefef",
+        color: "#DED9EF",
         roughness: 0.4,
-        metalness: 0.6,
+        metalness: 0.75,
       });
     }
   }, [step]);
