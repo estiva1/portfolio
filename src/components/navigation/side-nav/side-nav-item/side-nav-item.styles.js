@@ -12,5 +12,6 @@ export const Indicator = styled(motion.span)`
 
 export const NavItem = styled.li`
   font-size: 5rem;
+  //font-weight: 600;
   color: #fff;
 `;

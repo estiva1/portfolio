@@ -3,10 +3,15 @@ import { createGlobalStyle } from "styled-components";
 import NeueMontrealRegular from "./fonts/NeueMontreal-Regular.woff";
 import NeueMontrealRegular2 from "./fonts/NeueMontreal-Regular.woff2";
 
+import NormanStensil from "./fonts/NormanStencil.woff";
+import NormanStensil2 from "./fonts/NormanStencil.woff2";
+import NormanStensilFat from "./fonts/NormanStencil.woff";
+import NormanStensilFat2 from "./fonts/NormanStencilFat2.woff2";
+
 const GlobalStyle = createGlobalStyle`
   @font-face {
-    font-family: "Roboto Condensed";
-    src: url(${NeueMontrealRegular}) format("woff"), url(${NeueMontrealRegular2}) format("woff2");
+    font-family: "Norman Stensil";
+    src: url(${NormanStensilFat2}) format("woff2");
   }
 
   /* Box sizing rules */
@@ -48,7 +53,7 @@ const GlobalStyle = createGlobalStyle`
 
   /* Set core body defaults */
   body {
-    font-family: 'PP Neue Montreal', sans-serif;
+    font-family: "Norman Stensil", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
     // font-variation-settings: "slnt" 0;

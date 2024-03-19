@@ -7,6 +7,7 @@ import { slideUp } from "./hero.anim";
 import { HeroContainer, HeroGlassBox, Slider, SliderContainer, SliderText, Spacer } from "./hero.styles";
 import Globe from "../globe/globe.component";
 import Navigation from "../navigation/navigation.component";
+import Scene from "../../pages/not-found-page/not-found-page.component";
 
 const Hero = () => {
   const firstText = useRef(null);
@@ -56,6 +57,7 @@ const Hero = () => {
         </Slider>
       </SliderContainer> */}
       {/* <Navigation /> */}
+      
       {/* <HeroGlassBox /> */}
       {/* <h3 style={{ maxWidth: "100px", color: "#fff" }}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae quisquam totam assumenda, repellat similique

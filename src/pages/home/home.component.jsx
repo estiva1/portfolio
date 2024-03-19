@@ -183,7 +183,7 @@ const Home = () => {
         <WebGL />
       </Canvas>
       <Hero />
-      <div style={{ maxWidth: "50px", color: "transparent" }}>
+      <div style={{ maxWidth: "50px" }}>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam consequatur quam nam dolores nulla rem natus
         fugit qui consequuntur possimus. Ipsam et dolorum praesentium voluptatem odio corrupti eius in cupiditate nihil
         perspiciatis modi qui libero minus, mollitia itaque dolore inventore aliquam. Dolore non perspiciatis iusto
